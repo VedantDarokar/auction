@@ -14,7 +14,8 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     // Configure axios default
-    axios.defaults.baseURL = 'http://localhost:5000/api';
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    axios.defaults.baseURL = `${API_URL}/api`;
     if (token) {
         axios.defaults.headers.common['x-auth-token'] = token;
     }

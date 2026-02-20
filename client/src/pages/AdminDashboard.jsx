@@ -143,7 +143,7 @@ const AdminDashboard = () => {
             <div style={AuctionStyles.overlay} />
 
             <div style={{ textAlign: 'center', marginBottom: '20px', position: 'relative', zIndex: 1 }}>
-                <h1 style={AuctionStyles.header}>IPL AUCTION</h1>
+                <h1 style={AuctionStyles.header}>ADMIN DASHBOARD</h1>
                 <h3 style={{ color: '#ccc', fontSize: '1rem', margin: '0 0 20px 0', letterSpacing: '1px', textTransform: 'uppercase', fontWeight: '400' }}>by Mozilla Open Source Community</h3>
 
                 {/* Navigation Buttons */}
@@ -236,22 +236,22 @@ const AdminDashboard = () => {
                 </div>
 
                 {/* Quick Leaderboard View */}
-                <div style={{ ...AuctionStyles.card, flex: '1 1 350px', maxWidth: '500px', maxHeight: '500px', overflowY: 'auto' }}>
-                    <h3 style={{ textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '15px', color: '#fff', textAlign: 'center' }}>Live Standings</h3>
-                    <table style={AuctionStyles.table}>
+                <div style={{ ...AuctionStyles.card, flex: '1 1 350px', maxWidth: '500px' }}>
+                    <h3 style={{ textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '5px', color: '#fff', textAlign: 'center', fontSize: '1.2rem' }}>Live Standings</h3>
+                    <table style={{ ...AuctionStyles.table, marginTop: '5px' }}>
                         <thead>
                             <tr>
-                                <th style={AuctionStyles.th}>Team</th>
-                                <th style={{ ...AuctionStyles.th, textAlign: 'right' }}>Purse Rem.</th>
-                                <th style={{ ...AuctionStyles.th, textAlign: 'right' }}>Rating</th>
+                                <th style={{ ...AuctionStyles.th, padding: '4px', fontSize: '0.8rem' }}>Team</th>
+                                <th style={{ ...AuctionStyles.th, padding: '4px', textAlign: 'right', fontSize: '0.8rem' }}>Purse Rem.</th>
+                                <th style={{ ...AuctionStyles.th, padding: '4px', textAlign: 'right', fontSize: '0.8rem' }}>Rating</th>
                             </tr>
                         </thead>
                         <tbody>
                             {sortedTeams.map(t => (
                                 <tr key={t._id}>
-                                    <td style={AuctionStyles.td}>{t.shortCode}</td>
-                                    <td style={{ ...AuctionStyles.td, textAlign: 'right', color: '#4CAF50', fontWeight: 'bold' }}>₹{(t.purseRemaining / 10000000).toFixed(2)} Cr</td>
-                                    <td style={{ ...AuctionStyles.td, textAlign: 'right' }}>{t.totalRating}</td>
+                                    <td style={{ ...AuctionStyles.td, padding: '4px', fontSize: '0.85rem' }}>{t.shortCode}</td>
+                                    <td style={{ ...AuctionStyles.td, padding: '4px', textAlign: 'right', color: '#4CAF50', fontWeight: 'bold', fontSize: '0.85rem' }}>₹{(t.purseRemaining / 10000000).toFixed(2)} Cr</td>
+                                    <td style={{ ...AuctionStyles.td, padding: '4px', textAlign: 'right', fontSize: '0.85rem' }}>{t.totalRating}</td>
                                 </tr>
                             ))}
                         </tbody>

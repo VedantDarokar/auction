@@ -11,10 +11,10 @@ export const AuctionStyles = {
         backgroundRepeat: 'no-repeat',
         color: '#ffffff',
         minHeight: '100vh',
-        height: '100vh', // Force single screen height
+        // height: '100vh', // Removed to allow scrolling
         fontFamily: "'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif",
         padding: '20px',
-        overflow: 'hidden', // Prevent scrolling of main body
+        overflowX: 'hidden', // only hide horizontal overflow
         position: 'relative',
         boxSizing: 'border-box'
     },

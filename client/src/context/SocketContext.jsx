@@ -12,7 +12,8 @@ export const SocketProvider = ({ children }) => {
 
     useEffect(() => {
         // Only connect if admin or logged in really
-        const newSocket = io('http://localhost:5000', {
+        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        const newSocket = io(API_URL, {
             transports: ['websocket'], // Force websocket
         });
         setSocket(newSocket);

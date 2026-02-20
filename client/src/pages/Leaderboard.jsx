@@ -34,13 +34,14 @@ const Leaderboard = () => {
     const sortedTeams = [...teams].sort((a, b) => b.totalRating - a.totalRating);
 
     return (
-        <div style={{ ...AuctionStyles.container, overflow: 'auto' }}>
+        <div style={{ ...AuctionStyles.container, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div style={AuctionStyles.overlay} />
-            <div style={{ position: 'relative', zIndex: 1 }}>
-                <Link to="/admin" style={{ position: 'absolute', top: 0, left: 0, color: '#fff', textDecoration: 'none', fontSize: '1.2rem' }}>⬅ Back to Home</Link>
-                <h1 style={AuctionStyles.header}>Full Leaderboard</h1>
+            <Link to="/admin" style={{ position: 'absolute', top: '20px', left: '20px', color: '#fff', textDecoration: 'none', fontSize: '1.2rem', zIndex: 10, fontWeight: 'bold' }}>⬅ Back to Home</Link>
 
-                <div style={{ ...AuctionStyles.card, maxWidth: '800px', margin: '0 auto' }}>
+            <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '900px' }}>
+                <h1 style={{ ...AuctionStyles.header, marginBottom: '20px' }}>Full Leaderboard</h1>
+
+                <div style={{ ...AuctionStyles.card, margin: 0, maxHeight: '85vh', overflow: 'hidden' }}>
                     <table style={AuctionStyles.table}>
                         <thead>
                             <tr>
